@@ -11,6 +11,7 @@ import Gucchi from "../Components/BrandCard/Gucchi";
 import LouiVutton from "../Components/BrandCard/LouiVutton";
 import Nike from "../Components/BrandCard/Nike";
 import Zara from "../Components/BrandCard/Zara";
+import Register from "../Components/Login/Register";
 
 
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
         {
             path:'/login',
             element:<Login></Login>
+        },
+        {
+            path:'/register',
+            element:<Register></Register>
         },
         {
             path:'/adidas',
