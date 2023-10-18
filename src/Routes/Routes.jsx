@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Root from "../Components/Root/Root";
 import ErrorPage from "../Components/Error/ErrorPage";
 import Home from "../Components/Home/Home";
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
             element:<Home></Home>
         },
         {
-            path:'/add',
+            path:'/addProduct',
             element:<AddProduct></AddProduct>
         },
         {
@@ -38,27 +38,34 @@ const router = createBrowserRouter([
         },
         {
             path:'/adidas',
-            element:<Adidas></Adidas>
+            element:<Adidas></Adidas>,
+            loader:({params})=>fetch(`http://localhost:5000/product/${params.brand}`)
+            
         },
         {
             path:'/chanel',
-            element:<Chanel></Chanel>
+            element:<Chanel></Chanel>,
+            loader:()=>fetch("http://localhost:5000/product")
         },
         {
             path:'/gucchi',
-            element:<Gucchi></Gucchi>
+            element:<Gucchi></Gucchi>,
+            loader:()=>fetch("http://localhost:5000/product")
         },
         {
             path:'/louis',
-            element:<LouiVutton></LouiVutton>
+            element:<LouiVutton></LouiVutton>,
+            loader:()=>fetch("http://localhost:5000/product")
         },
         {
             path:'/nike',
-            element:<Nike></Nike>
+            element:<Nike></Nike>,
+            loader:()=>fetch("http://localhost:5000/product")
         },
         {
             path:'/zara',
-            element:<Zara></Zara>
+            element:<Zara></Zara>,
+            loader:()=>fetch("http://localhost:5000/product")
         },
     ]
   },

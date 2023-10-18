@@ -11,7 +11,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="hover:bg-red-700" to="/add">
+            <NavLink className="hover:bg-red-700" to="/addProduct">
               Add Product
             </NavLink>
           </li>
