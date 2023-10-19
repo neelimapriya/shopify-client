@@ -4,20 +4,20 @@ import AdidasCard from "./adidasCard";
 
 const Adidas = () => {
   // const loadedProducts = useLoaderData();
-  const [products, setProducts] = useState();
-useEffect(() => {
+//   const [products, setProducts] = useState();
+// useEffect(() => {
    
-    fetch(`http://localhost:5000/product/${brand}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setProducts(data); 
+//     fetch(`http://localhost:5000/product/${brand}`)
+//       .then((response) => response.json())
+//       .then((data) => {
+//         setProducts(data); 
         
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
+//       })
+//       .catch((error) => {
+//         console.error("Error fetching data:", error);
       
-      });
-  }, []);
+//       });
+  // }, []);
  
 
   console.log(products);
