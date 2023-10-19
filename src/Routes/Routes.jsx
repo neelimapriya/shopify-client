@@ -14,6 +14,7 @@ import Login from "../Components/Login/Login";
 import Register from "../Components/Login/Register";
 import Brands from "../Components/Brands/Brands";
 import Brand from "../Components/Brands/brand";
+import PrivateRoute from "../AuthProvider/PrivateRoute";
 
 
 
@@ -29,11 +30,13 @@ const router = createBrowserRouter([
         },
         {
             path:'/addProduct',
-            element:<AddProduct></AddProduct>
+            element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
         },
         {
             path:'/cart',
-            element:<MyCart></MyCart>
+            element:<PrivateRoute>
+                <MyCart></MyCart>
+            </PrivateRoute>
         },
         {
             path:'/login',
