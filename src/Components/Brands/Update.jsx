@@ -19,7 +19,7 @@ const Update = () => {
     const updateProduct = { name, brand, type, price, details, photo, rating };
     console.log(updateProduct);
 
-    fetch(`http://localhost:5000/singleProduct/${_id}`, {
+    fetch(`http://localhost:5000/updateProduct/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

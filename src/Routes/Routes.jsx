@@ -17,93 +17,78 @@ import Brand from "../Components/Brands/brand";
 import PrivateRoute from "../AuthProvider/PrivateRoute";
 import ProductDetail from "../Components/Brands/ProductDetail";
 import Update from "../Components/Brands/Update";
-import Cart from "../Components/Cart/Cart";
-
-
+import Cart from "../Components/MyCart/Cart";
+// import Cart from "../Components/Cart/Cart";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    errorElement:<ErrorPage></ErrorPage>,
-    children:[
-        {
-            path:'/',
-            element:<Home></Home>
-        },
-        {
-            path:'/addProduct',
-            element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
-        },
-        {
-            path:'/cart/:email',
-            element:<PrivateRoute>
-                <MyCart></MyCart>
-            </PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:5000/cart/${params.email}`)
-        },
-        {
-            path:'/login',
-            element:<Login></Login>
-        },
-        {
-            path:'/register',
-            element:<Register></Register>
-        },
-        {
-            path:'/brand',
-            element:<Brands></Brands>,
-            loader:()=>fetch('http://localhost:5000/brand')
-            
-        },
-        {
-            path:'/product/:brand',
-            element:<Brand></Brand>,
-            loader:({params})=>fetch(`http://localhost:5000/product/${params.brand}`)
-        },
-        {
-            path:'/card/:id',
-            element:<ProductDetail></ProductDetail>,
-            loader:({params})=>fetch(`http://localhost:5000/singleProduct/${params.id}`)
-        },
-        {
-            path:'/update/:id',
-            element:<Update></Update>,
-            loader:({params})=>fetch(`http://localhost:5000/singleProduct/${params.id}`)
-
-        },
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/addProduct",
+        element: (
+          <PrivateRoute>
+            <AddProduct></AddProduct>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/cart",
+        element: (
+          <PrivateRoute>
+            <MyCart></MyCart>
+          </PrivateRoute>
+        ),
        
+       
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/brand",
+        element: <Brands></Brands>,
+        loader: () => fetch("http://localhost:5000/brand"),
+      },
+      {
+        path: "/product/:brand",
+        element: <Brand></Brand>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/product/${params.brand}`),
+      },
+      {
+        path: "/card/:id",
+        element: <ProductDetail></ProductDetail>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/singleProduct/${params.id}`),
+      },
+      {
+        path: "/update/:id",
+        element: <Update></Update>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/singleProduct/${params.id}`),
+      },
+      {
+        path: "/cartProduct/:email",
+        element:<Cart></Cart>,
+        // loader: ({ params }) =>
+        //   fetch(`http://localhost:5000/cart/${params.email}`),
+      },
 
-
-
-
-
-        // {
-        //     path:'//brandCard/Chanel',
-        //     element:<Chanel></Chanel>,
-        //     loader:()=>fetch("http://localhost:5000/product")
-        // },
-        // {
-        //     path:'/gucchi',
-        //     element:<Gucchi></Gucchi>,
-        //     loader:()=>fetch("http://localhost:5000/product")
-        // },
-        // {
-        //     path:'/louis',
-        //     element:<LouiVutton></LouiVutton>,
-        //     loader:()=>fetch("http://localhost:5000/product")
-        // },
-        // {
-        //     path:'/nike',
-        //     element:<Nike></Nike>,
-        //     loader:()=>fetch("http://localhost:5000/product")
-        // },
-        // {
-        //     path:'/zara',
-        //     element:<Zara></Zara>,
-        //     loader:()=>fetch("http://localhost:5000/product")
-        // },
-    ]
+     
+      
+    ],
   },
 ]);
 

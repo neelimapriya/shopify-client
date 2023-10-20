@@ -2,6 +2,7 @@
 import { useContext } from "react";
 import {  useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const ProductDetail = () => {
@@ -30,6 +31,14 @@ const ProductDetail = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
+            if(data.insertedId){
+                Swal.fire(
+                    'Good job!',
+                    'Product added successfully!',
+                    'success'
+                  )
+                 
+            }
         })
     }
 
