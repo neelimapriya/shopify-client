@@ -8,16 +8,16 @@ const Brand = () => {
  
 
   return (
-    <div className=" ">
+    <div className=" mt-28 ">
       <Carosel></Carosel>
-      <h2 className="text-center text-3xl underline mt-5 mb-5">Here Is  All Available Products Of <span className="text-sky-600">{params[0].brand}</span></h2>
+      {/* <h2 className="text-center text-3xl underline mt-5 mb-5">Here Is  All Available Products Of <span className="text-sky-600"></span></h2> */}
 
         {
-            params.length ==0 ?(
+          params &&  params.length == 0 ?(
                 <p className="text-center text-2xl text-sky-600 justify-center mt-10 mb-32"> Product of This Brand Is Currently Stock Out !</p>
             )
             :(
-                <div className="grid md:grid-cols-2 max-w-6xl mx-auto mt-10  gap-10 ">
+                <div className="grid lg:grid-cols-2 max-w-6xl mx-auto mt-10  gap-10 ">
                      {params.map((item) => (
         <div className=" " key={item._id}>
            

@@ -2,7 +2,7 @@
 
 const Carosel = () => {
     return (
-        <div>
+        <div className="pt-5 px-5">
              {/* slider */}
           <div className="carousel w-full">
             <div id="slide1" className="carousel-item relative w-full">
@@ -49,7 +49,7 @@ const Carosel = () => {
             </div>
             <div id="slide4" className="carousel-item relative w-full">
               <img
-                src="https://i.ibb.co/C6b0N0y/zara2.jpg"
+                src="https://i.ibb.co/ckWXzZB/nike3.jpg"
                 className="w-full"
               />
               <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

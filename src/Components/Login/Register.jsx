@@ -67,7 +67,7 @@ const Register = () => {
   };
 
   return (
-    <div className=" bg-gradient-to-r from-indigo-300 from-10% via-sky-300 via-30% to-emerald-300 to-90%">
+    <div className="pt-32 bg-gradient-to-r from-indigo-300 from-10% via-sky-300 via-30% to-emerald-300 to-90%">
       <div className="max-w-3xl mx-auto min-h-fit pt-10">
         <div className=" ">
           <h1 className="text-5xl font-bold text-center">

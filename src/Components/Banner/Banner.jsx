@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div
-      className="hero min-h-screen"
+      className="hero min-h-screen mt-20"
       style={{
         backgroundImage:
           "url(https://i.ibb.co/87wpQLx/shopify-Cover2.png)",

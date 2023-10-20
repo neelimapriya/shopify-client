@@ -24,9 +24,9 @@ const [data, setData]=useState([])
   }, []);
 
   return (
-    <div className="mt-20 ">
-      <div>
-      <h2 className="text-center text-3xl font-bold underline underline-offset-8  mb-5">All Category</h2>
+    <div className="mt-40 mb-20">
+      <div className="flex justify-center">
+      <h2 className="text-center text-3xl font-bold underline underline-offset-8  mb-10">All Category</h2>
       </div>
      <div  className="grid ml-24 md:grid-cols-2 lg:grid-cols-3 max-w-6xl md:mx-auto gap-10">
      {data.map(item=>

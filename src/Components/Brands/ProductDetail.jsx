@@ -45,7 +45,7 @@ const ProductDetail = () => {
 
     
     return (
-        <div className="max-w-6xl mx-auto border mt-10 mb-20">
+        <div className="max-w-6xl mx-auto  border mt-40 mb-20">
 
           <div  className="  grid grid-cols-12 px-5">
           <div className="col-span-4 mt-5">

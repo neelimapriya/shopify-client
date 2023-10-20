@@ -11,7 +11,7 @@ const Cart = ({item,datas,setData}) => {
 
     Swal.fire({
         title: "Are you sure?",
-        text: "You won't be able to revert this!",
+        text: "You product will be permanently deleted!",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
@@ -26,7 +26,7 @@ const Cart = ({item,datas,setData}) => {
             .then((data) => {
               console.log(data);
               if (data.deletedCount >0) {
-                Swal.fire("Deleted!", "Your Coffee has been deleted.", "success");
+                Swal.fire("Deleted!", "Your Product has been deleted.", "success");
                 const remaining = datas.filter((cart) => cart._id !== _id);
                 setData(remaining);
               }

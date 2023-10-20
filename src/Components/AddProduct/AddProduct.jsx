@@ -134,7 +134,7 @@ const AddProduct = () => {
         </div>
         {/* rating*/}
         <div className="">
-          <div className="form-control md:w-1/2">
+          <div className="form-control ">
             <label className="label">
               <span className="label-text">Rate Your Product </span>
             </label>
