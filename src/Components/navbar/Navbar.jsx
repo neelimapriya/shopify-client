@@ -23,7 +23,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="hover:bg-lime-500" to="/cart">
+            <NavLink className="hover:bg-lime-500" to={`/cart/${User.email}` }>
             My Cart
             </NavLink>
           </li>

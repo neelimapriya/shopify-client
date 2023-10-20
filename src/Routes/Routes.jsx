@@ -15,6 +15,9 @@ import Register from "../Components/Login/Register";
 import Brands from "../Components/Brands/Brands";
 import Brand from "../Components/Brands/brand";
 import PrivateRoute from "../AuthProvider/PrivateRoute";
+import ProductDetail from "../Components/Brands/ProductDetail";
+import Update from "../Components/Brands/Update";
+import Cart from "../Components/Cart/Cart";
 
 
 
@@ -33,10 +36,11 @@ const router = createBrowserRouter([
             element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
         },
         {
-            path:'/cart',
+            path:'/cart/:email',
             element:<PrivateRoute>
                 <MyCart></MyCart>
-            </PrivateRoute>
+            </PrivateRoute>,
+            loader:({params})=>fetch(`http://localhost:5000/cart/${params.email}`)
         },
         {
             path:'/login',
@@ -56,7 +60,19 @@ const router = createBrowserRouter([
             path:'/product/:brand',
             element:<Brand></Brand>,
             loader:({params})=>fetch(`http://localhost:5000/product/${params.brand}`)
-        }
+        },
+        {
+            path:'/card/:id',
+            element:<ProductDetail></ProductDetail>,
+            loader:({params})=>fetch(`http://localhost:5000/singleProduct/${params.id}`)
+        },
+        {
+            path:'/update/:id',
+            element:<Update></Update>,
+            loader:({params})=>fetch(`http://localhost:5000/singleProduct/${params.id}`)
+
+        },
+       
 
 
 

@@ -1,9 +1,13 @@
-import React from 'react';
+
+import { useLoaderData } from 'react-router-dom';
 
 const MyCart = () => {
+    const data =useLoaderData()
+    console.log(data)
+
     return (
         <div>
-            <h2>My cart</h2>
+            
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import AOS from 'aos';
+
 
 
 
@@ -36,7 +36,7 @@ const [data, setData]=useState([])
             <p className="text-black mb-16 text-4xl font-extrabold text-center">{item.brand}</p> 
             <br />
            <Link className="ml-24" to={`/product/${item.brand}`} >
-
+             
            <button className= "btn text-center font-bold bg-black text-white hover:bg-slate-600"> View All Product</button>
            </Link>
         </div>

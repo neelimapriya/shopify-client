@@ -1,5 +1,12 @@
-const AddProduct = () => {
-  const handleAdd = (e) => {
+import { useLoaderData } from "react-router-dom";
+
+
+const Update = () => {
+    const data=useLoaderData()
+    console.log(data)
+    const {brand, details, name, photo, price, rating,type,_id }=data;
+
+   const handleUpdate = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
@@ -9,15 +16,15 @@ const AddProduct = () => {
     const details = form.details.value;
     const photo = form.photo.value;
     const rating = form.rating.value;
-    const newProduct = { name, brand, type, price, details, photo, rating };
-    console.log(newProduct);
+    const updateProduct = { name, brand, type, price, details, photo, rating };
+    console.log(updateProduct);
 
-    fetch("http://localhost:5000/product", {
-      method: "POST",
+    fetch(`http://localhost:5000/singleProduct/${_id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(newProduct),
+      body: JSON.stringify(updateProduct),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -28,12 +35,19 @@ const AddProduct = () => {
   return (
     <div className="bg-sky-200">
       <form
-        onSubmit={handleAdd}
+        onSubmit={handleUpdate}
         className="max-w-2xl mx-auto p-5  bg-transparent pt-20 space-y-5"
       >
-        <h2 className="text-4xl font-extrabold text-center">
-          Add New Product Here
+
+        <div>
+            
+        </div>
+
+       <div>
+       <h2 className="text-4xl font-extrabold text-center">
+          Update Your Product Here
         </h2>
+        <img className="w-64 self-center content-center " defaultValue={photo} src={photo} alt="" />
         {/* form row 1*/}
         <div className="md:flex justify-around md:space-x-4">
           <div className="form-control md:w-1/2">
@@ -42,6 +56,7 @@ const AddProduct = () => {
             </label>
             <label className="input-group">
               <input
+              defaultValue={name}
                 name="name"
                 type="text"
                 placeholder="Product Name"
@@ -54,13 +69,8 @@ const AddProduct = () => {
               <span className="label-text">Brand Name</span>
             </label>
             <label className="input-group">
-              {/* <input
-                type="text"
-                name="brand"
-                placeholder="Brand Name"
-                className="input input-bordered w-full"
-              /> */}
-              <select name="brand" className="select select-bordered w-full">
+             
+              <select defaultValue={brand} name="brand" className="select select-bordered w-full">
                 <option disabled selected>
                 select Brand Name
                 </option>
@@ -82,6 +92,7 @@ const AddProduct = () => {
             </label>
             <label className="input-group">
               <input
+              defaultValue={type}
                 name="type"
                 type="text"
                 placeholder="Your Product Type"
@@ -95,6 +106,7 @@ const AddProduct = () => {
             </label>
             <label className="input-group">
               <input
+              defaultValue={price}
                 type="text"
                 name="price"
                 placeholder="Product Price (usd)"
@@ -111,6 +123,7 @@ const AddProduct = () => {
             </label>
             <label className="input-group">
               <input
+              defaultValue={details}
                 name="details"
                 type="text"
                 placeholder="Product Details"
@@ -124,6 +137,7 @@ const AddProduct = () => {
             </label>
             <label className="input-group">
               <input
+              defaultValue={photo}
                 type="text"
                 name="photo"
                 placeholder="Your Product Picture url"
@@ -133,6 +147,8 @@ const AddProduct = () => {
           </div>
         </div>
         {/* rating*/}
+
+        
         <div className="">
           <div className="form-control md:w-1/2">
             <label className="label">
@@ -140,7 +156,7 @@ const AddProduct = () => {
             </label>
             <label className="input-group">
              
-              <select name="rating" className="select w-full select-bordered">
+              <select defaultValue={rating} name="rating" className="select w-full select-bordered">
                 <option disabled selected>
                   rate 
                 </option>
@@ -157,6 +173,7 @@ const AddProduct = () => {
             </label>
           </div>
         </div>
+       </div>
 
         <input
           type="submit"
@@ -168,4 +185,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default Update;
