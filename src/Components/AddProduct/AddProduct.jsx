@@ -14,7 +14,7 @@ const AddProduct = () => {
     const newProduct = { name, brand, type, price, details, photo, rating };
     // console.log(newProduct);
 
-    fetch("http://localhost:5000/product", {
+    fetch("https://shopify-jet.vercel.app/product", {
       method: "POST",
       headers: {
         "content-type": "application/json",

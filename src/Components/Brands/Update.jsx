@@ -19,7 +19,7 @@ const Update = () => {
     const updateProduct = { name, brand, type, price, details, photo, rating };
     // console.log(updateProduct);
 
-    fetch(`http://localhost:5000/updateProduct/${_id}`, {
+    fetch(`https://shopify-jet.vercel.app/updateProduct/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -10,7 +10,7 @@ const [data, setData]=useState([])
  
   useEffect(() => {
    
-    fetch("http://localhost:5000/brand")
+    fetch("https://shopify-jet.vercel.app/brand")
       .then((response) => response.json())
       .then((data) => {
         // console.log(data)

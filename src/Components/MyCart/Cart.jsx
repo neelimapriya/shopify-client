@@ -19,7 +19,7 @@ const Cart = ({item,datas,setData}) => {
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/cart/${_id}`, {
+          fetch(`https://shopify-jet.vercel.app/cart/${_id}`, {
             method: 'DELETE',
           })
             .then((res) => res.json())

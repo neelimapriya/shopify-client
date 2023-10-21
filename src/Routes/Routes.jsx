@@ -60,36 +60,36 @@ const router = createBrowserRouter([
       {
         path: "/brand",
         element: <Brands></Brands>,
-        loader: () => fetch("http://localhost:5000/brand"),
+        loader: () => fetch("https://shopify-jet.vercel.app/brand"),
       },
       {
         path: "/product/:brand",
         element: <Brand></Brand>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.brand}`),
+          fetch(`https://shopify-jet.vercel.app/product/${params.brand}`),
       },
       {
         path: "/card/:id",
         element: <PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/singleProduct/${params.id}`),
+          fetch(`https://shopify-jet.vercel.app/singleProduct/${params.id}`),
       },
       {
         path: "/update/:id",
         element: <PrivateRoute><Update></Update></PrivateRoute>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/singleProduct/${params.id}`),
+          fetch(`https://shopify-jet.vercel.app/singleProduct/${params.id}`),
       },
       {
         path: "/cartProduct/:email",
         element:<Cart></Cart>,
         // loader: ({ params }) =>
-        //   fetch(`http://localhost:5000/cart/${params.email}`),
+        //   fetch(`https://shopify-jet.vercel.app/cart/${params.email}`),
       },
       {
         path:"/theme/:brand",
         element:<Carosel></Carosel>,
-        loader:({params})=>fetch(`http://localhost:5000/theme/${params.brand}`)
+        loader:({params})=>fetch(`https://shopify-jet.vercel.app/theme/${params.brand}`)
       }
 
      

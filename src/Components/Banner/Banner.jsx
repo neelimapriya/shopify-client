@@ -11,7 +11,7 @@ const Banner = () => {
           "url(https://i.ibb.co/87wpQLx/shopify-Cover2.png)",
       }}
     >
-      <div className="flex mb-[670px] max-w-3xl">
+      <div className="flex mb-[700px] md:mb-[670px] max-w-3xl">
         <button className="text-xl font-serif border border-sky-600">Available Brands</button>
       <Link to="/brand">
       <Marquee className="text-2xl font-serif mt-2"  pauseOnHover={true} speed={50}>

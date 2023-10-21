@@ -1,8 +1,9 @@
-# React + Vite
+## live link: 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## My project name is SHOPIFY
+- In this project i added AOS animation in home page
+- I add some question's answer in home page this will help for visitors.
+- I add some private routes user can visit these when loggein.
+- User can add product and update product in this website
+- User can add product in cart and delete item from cart.

@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Carosel from "./Carosel";
 import { BiPencil, BiArrowBack } from 'react-icons/bi';
+import { AiFillStar } from 'react-icons/ai';
 
 const Brand = () => {
   const params = useLoaderData([]);
@@ -44,9 +45,11 @@ const Brand = () => {
     <p className="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
       Price: $ {item.price}
     </p>
+    <div className="flex">
     <p className="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
-      Rating:  {item.rating}/5
-    </p>
+      Rating:  {item.rating}/5 
+    </p> <AiFillStar className="text-xl text-yellow-500 "></AiFillStar>
+    </div>
 
     
      <div className="grid grid-cols-1 md:grid-cols-2">
