@@ -1,13 +1,12 @@
 
-// import { useLoaderData } from 'react-router-dom';
 
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Cart from './Cart';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-import { FaArrowLeft, FaBeer } from 'react-icons/fa';
+import { FaArrowLeft } from 'react-icons/fa';
 
 
 const MyCart = () => {
@@ -31,7 +30,7 @@ const {User}=useContext(AuthContext)
 
     fetchData();
   }, [User]);
-console.log(datas)
+// console.log(datas)
     return (
         <div className='max-w-5xl mx-auto mt-32'>
             <h2 className='text-3xl text-center text-gray-700 '>Your Selected products.</h2>

@@ -17,7 +17,7 @@ const Update = () => {
     const photo = form.photo.value;
     const rating = form.rating.value;
     const updateProduct = { name, brand, type, price, details, photo, rating };
-    console.log(updateProduct);
+    // console.log(updateProduct);
 
     fetch(`http://localhost:5000/updateProduct/${_id}`, {
       method: "PUT",
@@ -28,7 +28,7 @@ const Update = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.modifiedCount > 0) {
           Swal.fire("Good job!", "Product Updated successfully!", "success");
           form.reset();

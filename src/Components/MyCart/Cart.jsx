@@ -1,17 +1,17 @@
-import { useLoaderData } from "react-router-dom";
+
 import {RiDeleteBin6Line} from "react-icons/ri"
 import Swal from "sweetalert2";
 
 
 const Cart = ({item,datas,setData}) => {
-   const {brand,email,name,photo,price,_id}=item;
+   const {brand,name,photo,price,_id}=item;
 
 
    const handleDelete=(_id)=>{
 
     Swal.fire({
         title: "Are you sure?",
-        text: "You product will be permanently deleted!",
+        text: "Your product will be permanently deleted from cart!",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",

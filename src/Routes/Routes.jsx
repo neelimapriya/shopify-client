@@ -18,6 +18,7 @@ import PrivateRoute from "../AuthProvider/PrivateRoute";
 import ProductDetail from "../Components/Brands/ProductDetail";
 import Update from "../Components/Brands/Update";
 import Cart from "../Components/MyCart/Cart";
+import Carosel from "../Components/Brands/Carosel";
 // import Cart from "../Components/Cart/Cart";
 
 const router = createBrowserRouter([
@@ -85,6 +86,11 @@ const router = createBrowserRouter([
         // loader: ({ params }) =>
         //   fetch(`http://localhost:5000/cart/${params.email}`),
       },
+      {
+        path:"/theme/:brand",
+        element:<Carosel></Carosel>,
+        loader:({params})=>fetch(`http://localhost:5000/theme/${params.brand}`)
+      }
 
      
       

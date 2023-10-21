@@ -75,24 +75,24 @@ const Navbar = () => {
           <>
             <label
               tabIndex={0}
-              className="btn btn-outline btn-accent btn-circle avatar"
+              className=" avatar"
             >
-              <div className=" w-10 rounded-full  ">
+              <div className="w-5  md:w-10 rounded-full  ">
                 <img src={User.photoURL} />
               </div>
             </label>
-            <p className="text-black font-semibold ">{User.displayName}</p> 
+            <p className="text-black font-normal w-12 md:w-32 md:font-semibold ">{User.displayName}</p> 
             
             <button
               onClick={handleLogout}
-              className="btn w-32 bg-gray-100 text-black hover:bg-sky-600"
+              className="btn w-16 md:w-32 bg-gray-100 text-black hover:bg-sky-600"
             >
               LogOut
             </button>
           </>
         ) : (
           <Link to="/login">
-            <button className="btn w-32 bg-sky-600 text-white hover:bg-lime-600">
+            <button className="btn w-20 md:w-32 bg-sky-600 text-white hover:bg-lime-600">
               LogIn
             </button>
           </Link>

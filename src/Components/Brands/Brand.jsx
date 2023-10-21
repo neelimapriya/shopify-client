@@ -4,7 +4,7 @@ import { BiPencil, BiArrowBack } from 'react-icons/bi';
 
 const Brand = () => {
   const params = useLoaderData([]);
-  console.log(params);
+  // console.log(params);
  
 
   return (
@@ -49,7 +49,7 @@ const Brand = () => {
     </p>
 
     
-     <div className="flex justify-around">
+     <div className="grid grid-cols-1 md:grid-cols-2">
      <Link to={`/card/${item._id}`}>
      <button
         className="flex items-center gap-2 px-6 py-3 font-sans text-base font-bold text-center text-gray-700 underline uppercase align-middle transition-all rounded-lg select-none hover:bg-pink-500/10 active:bg-gray-400 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"

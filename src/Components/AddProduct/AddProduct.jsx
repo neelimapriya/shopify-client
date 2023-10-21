@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 const AddProduct = () => {
   const handleAdd = (e) => {
     e.preventDefault();
@@ -10,7 +12,7 @@ const AddProduct = () => {
     const photo = form.photo.value;
     const rating = form.rating.value;
     const newProduct = { name, brand, type, price, details, photo, rating };
-    console.log(newProduct);
+    // console.log(newProduct);
 
     fetch("http://localhost:5000/product", {
       method: "POST",
@@ -21,12 +23,16 @@ const AddProduct = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
+        if (data.insertedId ) {
+          Swal.fire("Good job!", "Product Added successfully!", "success");
+          form.reset();
+        }
       });
   };
 
   return (
-    <div className="bg-sky-200">
+    <div className="pt-28 bg-sky-200">
       <form
         onSubmit={handleAdd}
         className="max-w-2xl mx-auto p-5  bg-transparent pt-20 space-y-5"
