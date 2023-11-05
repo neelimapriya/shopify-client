@@ -4,11 +4,11 @@ import Footer from "../Footer/Footer";
 import Swal from "sweetalert2";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { updateProfile } from "firebase/auth";
+import { updateProfile  } from "firebase/auth";
 
 const Register = () => {
   const [errorMessage, setErrorMessage] = useState("");
-  const { newUser } = useContext(AuthContext);
+  const { newUser,login } = useContext(AuthContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -48,7 +48,7 @@ const Register = () => {
           displayName: name,
           photoURL: photo,
         })
-          .then()
+          .then(()=>login(email,password))
           .catch((error) => {
             console.log(error);
           });

@@ -37,7 +37,7 @@ const Update = () => {
   };
 
   return (
-    <div className=" max-w-5xl mx-auto mb-10">
+    <div className=" max-w-5xl mx-auto mb-10 pt-32">
       <h2 className="text-4xl font-extrabold text-center">
         Update Your Product Here
       </h2>

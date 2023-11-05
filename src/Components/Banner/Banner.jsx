@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div
-      className="hero min-h-screen mt-20"
+      className="hero min-h-screen mt-20 "
       style={{
         backgroundImage:
           "url(https://i.ibb.co/87wpQLx/shopify-Cover2.png)",
       }}
     >
-      <div className="flex mb-[700px] md:mb-[670px] max-w-3xl">
-        <button className="text-xl font-serif border border-sky-600">Available Brands</button>
+      <div className="flex mb-[690px] md:mb-[670px]  max-w-3xl">
+        <button className=" text-xl font-serif border border-sky-600">Available Brands</button>
       <Link to="/brand">
       <Marquee className="text-2xl font-serif mt-2"  pauseOnHover={true} speed={50}>
       Chanel |  Louis Vuitton  | Nike |  Adidas |  Zara  | Gucci

@@ -1,39 +1,39 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../assets/pngegg.png"
+import logo from "../../assets/pngegg.png";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
+  const { User, logOut } = useContext(AuthContext);
 
-  const {User,logOut}=useContext(AuthContext);
-  const handleLogout=()=>{
+  const handleLogout = () => {
     logOut().then().catch();
-  }
+  };
 
-    const navLinks = (
-        <>
-          <li>
-            <NavLink className="hover:bg-lime-500" to="/">
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="hover:bg-lime-500" to="/addProduct">
-              Add Product
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="hover:bg-lime-500" to='/cart'>
-            My Cart 
-            </NavLink>
-          </li>
-          <li>
-            <NavLink className="hover:bg-lime-500" to="/login">
-              Login
-            </NavLink>
-          </li>
-        </>
-      );
+  const navLinks = (
+    <>
+      <li>
+        <NavLink className="hover:bg-lime-500" to="/">
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="hover:bg-lime-500" to="/addProduct">
+          Add Product
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="hover:bg-lime-500" to="/cart">
+          My Cart
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="hover:bg-lime-500" to="/login">
+          Login
+        </NavLink>
+      </li>
+    </>
+  );
 
   return (
     <div className="top-0 fixed z-10 w-full">
@@ -60,44 +60,43 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-             {navLinks}
+              {navLinks}
             </ul>
           </div>
           <img className="w-32 md:ml-10 " src={logo} alt="" />
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            {navLinks}
-          </ul>
+          <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end space-x-3 ">
-        {User ? (
-          <>
-            <label
-              tabIndex={0}
-              className=" avatar"
-            >
-              <div className="w-5  md:w-10 rounded-full  ">
-                <img src={User.photoURL} />
+          {User ? (
+            <>
+              <div className="grid md:grid-cols-2 ">
+              <label tabIndex={0} className=" avatar">
+                <div className="w-7 md:w-10 rounded-full md:ml-14 ">
+                  <img src={User?.photoURL} />
+                </div>
+              </label>
+              <p className="text-black font-normal w-12 md:w-32 md:font-semibold ">
+                {User?.displayName}
+              </p>
               </div>
-            </label>
-            <p className="text-black font-normal w-12 md:w-32 md:font-semibold ">{User.displayName}</p> 
-            
-            <button
-              onClick={handleLogout}
-              className="btn w-16 md:w-32 bg-gray-100 text-black hover:bg-sky-600"
-            >
-              LogOut
-            </button>
-          </>
-        ) : (
-          <Link to="/login">
-            <button className="btn w-20 md:w-32 bg-sky-600 text-white hover:bg-lime-600">
-              LogIn
-            </button>
-          </Link>
-        )}
-      </div>
+
+              <button
+                onClick={handleLogout}
+                className="btn w-16 md:w-32 bg-gray-100 text-black hover:bg-sky-600"
+              >
+                LogOut
+              </button>
+            </>
+          ) : (
+            <Link to="/login">
+              <button className="btn w-20 md:w-32 bg-sky-600 text-white hover:bg-lime-600">
+                LogIn
+              </button>
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );
